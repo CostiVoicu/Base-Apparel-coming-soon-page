@@ -1,0 +1,168 @@
+@import './variables';
+
+html, body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+body{
+    font-size: $font-size;
+    font-family: $font-family;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    @media (min-width: $desktop-size){
+        background-image: url(../images/bg-pattern-desktop.svg);
+    }
+    .main{
+        width: 375px;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        @media (min-width: $desktop-size){
+            width: 1440px;
+            height: 800px;
+            display: grid;
+            grid-template-columns: 57% 42%;
+            grid-template-rows: 25% 25% 15% 39%;
+            overflow: hidden;
+        }
+        .header{
+            position: absolute;
+            padding: 2em;
+            left: 0px;
+            @media (min-width: $desktop-size){
+                grid-column: 1/2;
+                grid-row: 1/2;
+                padding-left: 10em;
+            }
+            #logo{
+                width: 110px;
+                height: auto;
+                @media (min-width: $desktop-size){
+                    width: 180px;
+                }
+            }
+        }
+        .hero{
+            padding-top: 5.5em;
+            @media (min-width: $desktop-size){
+                grid-column: 2/3;
+                grid-row: 1/5;
+                position: absolute;
+                padding-top: 0em;
+                width: 100%;
+                height: 100vh;
+            }
+            #hero_desktop{
+                display: none;
+                @media (min-width: $desktop-size){
+                    display: block;
+                }
+            }
+            #hero_mobile{
+                display: block;
+                @media (min-width: $desktop-size){
+                    display: none;
+                }
+            }
+        }
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $neutral-color-dark-grayish-red;
+            font-weight: $big-weight;
+            text-align: center;
+            max-width: 100px;
+            letter-spacing: 0.6em;
+            font-size: $font-size + 4px;
+            @media (min-width: $desktop-size){
+                grid-column: 1/2;
+                grid-row: 2/3;
+                padding-left: 10em;
+                text-align: start;
+                font-size: $font-size + 14px;
+            }
+            .highlight{
+                color: $primary-color-desaturated-red;
+                font-weight: $small-weight;
+            }
+        }
+        .article{
+            text-align: center;
+            padding: 0 1.1em;
+            line-height: 1.4em;
+            color: $primary-color-desaturated-red;
+            @media (min-width: $desktop-size){
+                grid-column: 1/2;
+                grid-row: 3/4;
+                max-width: 430px;
+                text-align: start;
+                padding-left: 10em;
+            }
+        }
+        .email{
+            padding: 2em 0;
+            position: relative;
+            @media (min-width: $desktop-size){
+                grid-column: 1/2;
+                grid-row: 4/5;
+                padding-left: 10em;
+            }
+            #form{
+                width: 280px;
+                height: 45px;
+                padding-left: 2em;
+                border-color: rgba(128, 128, 128, 0.281);
+                border-radius: 1.5rem;
+                border-width: 0.1em;
+                background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+                @media (min-width: $desktop-size){
+                    width: 400px;
+                }                
+            }
+            #error{
+                display: none;
+                position: absolute;
+                top: 45px;
+                left: 215px;
+                @media (min-width: $desktop-size){
+                    left: 460px;
+                }
+            }
+            .button{
+                position: absolute;
+                top: 31px;
+                left: 247px;
+                background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+                width: 65px;
+                height: 50px;
+                border-radius: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media (min-width: $desktop-size){
+                    left: 506px;
+                    width: 85px;
+                }
+            }
+            #error_text{
+                display: none;
+                position: absolute;
+                left: 20px;
+                font-size: $font-size - 2px;
+                color: $primary-color-soft-red;
+                @media (min-width: $desktop-size){
+                    left: 180px;
+                }
+            }
+        }
+    }
+}
